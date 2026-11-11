@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binance Futures Arayüzü</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- TradingView Charting Library -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+  <!-- Üst Bar (Header) -->
+  <header class="navbar">
+    <div class="logo">BINANCE <span>FUTURES</span></div>
+    <div class="ticker-info">
+      <span class="symbol">BTCUSDT Perps</span>
+      <span class="price" id="header-price">Loading...</span>
+    </div>
+  </header>
+
+  <!-- Ana Arayüz Düzeni -->
+  <div class="main-container">
+    
+    <!-- Sol Panel: Grafik ve Pozisyonlar -->
+    <div class="left-panel">
+      <!-- Grafik Alanı -->
+      <div class="chart-container" id="tv_chart_container"></div>
+
+      <!-- Alt Panel: Pozisyonlar / İşlem Geçmişi -->
+      <div class="positions-panel">
+        <div class="tabs">
+          <button class="tab-btn active">Açık Pozisyonlar (0)</button>
+          <button class="tab-btn">Açık Emirler (0)</button>
+          <button class="tab-btn">İşlem Geçmişi</button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Sembol</th>
+                <th>Büyüklük</th>
+                <th>Giriş Fiyatı</th>
+                <th>Gösterge Fiyatı</th>
+                <th>Likidasyon Fiyatı</th>
+                <th>PNL (ROE %)</th>
+              </tr>
+            </thead>
+            <tbody id="positions-body">
+              <tr>
+                <td colspan="6" class="no-data">Aktif pozisyon bulunmuyor.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orta Panel: Emir Defteri (Order Book) -->
+    <div class="orderbook-panel">
+      <h3>Emir Defteri</h3>
+      <div class="ob-header">
+        <span>Fiyat (USDT)</span>
+        <span>Miktar (BTC)</span>
+      </div>
+      <!-- Satış Emirleri (Asks) -->
+      <div class="ob-asks" id="ob-asks"></div>
+      
+      <!-- Anlık Fiyat -->
+      <div class="ob-current-price" id="ob-current-price">--</div>
+      
+      <!-- Alış Emirleri (Bids) -->
+      <div class="ob-bids" id="ob-bids"></div>
+    </div>
+
+    <!-- Sağ Panel: Alım-Satım Formu -->
+    <div class="trade-panel">
+      <div class="trade-tabs">
+        <button class="trade-tab active">Limit</button>
+        <button class="trade-tab">Piyasa (Market)</button>
+      </div>
+
+      <div class="leverage-selector">
+        <button id="leverage-btn">Çapraz 20x</button>
+      </div>
+
+      <form id="order-form" onsubmit="return false;">
+        <div class="input-group">
+          <label>Fiyat</label>
+          <input type="number" id="order-price" placeholder="USDT" step="0.1">
+        </div>
+        <div class="input-group">
+          <label>Miktar</label>
+          <input type="number" id="order-qty" placeholder="BTC" step="0.001">
+        </div>
+
+        <div class="balance-info">
+          <span>Kullanılabilir Bakiye:</span>
+          <strong>1,000.00 USDT</strong>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-buy">Uzun (Long)</button>
+          <button class="btn btn-sell">Kısa (Short)</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- Üst Koin Seçim Sekmeleri -->
+<div class="coin-selector-bar">
+  <button class="coin-tab active" data-symbol="BTCUSDT">BTC/USDT</button>
+  <button class="coin-tab" data-symbol="ETHUSDT">ETH/USDT</button>
+  <button class="coin-tab" data-symbol="LINKUSDT">LINK/USDT</button>
+  <button class="coin-tab" data-symbol="SOLUSDT">SOL/USDT</button>
+  <button class="coin-tab" data-symbol="ADAUSDT">ADA/USDT</button>
+  <button class="coin-tab" data-symbol="AVAXUSDT">AVAX/USDT</button>
+  <button class="coin-tab" data-symbol="XRPUSDT">XRP/USDT</button>
+  <button class="coin-tab" data-symbol="DOTUSDT">DOTUSDT</button>
+  <button class="coin-tab" data-symbol="DOGEUSDT">DOGEUSDT</button>
+</div>
+
+<!-- 9 Koinin Özet Kartları Paneli -->
+<div class="coins-grid-summary">
+  <!-- JavaScript ile 9 koin için otomatik kartlar buraya doldurulacak -->
+</div>

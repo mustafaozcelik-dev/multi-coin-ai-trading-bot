@@ -1,0 +1,28 @@
+# Python
+_pycache_/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# API keys and secrets
+secrets.json
+config_private.py
+
+# Trading data and personal records
+backtest_v2_data_cache.json
+paper_state_v2.json
+backtest_trades.csv
+backtest_daily_pnl.csv
+backtest_v2_summary.csv
+backtest_v2_trades.csv
+paper_trades_v2.csv
+
+# Temporary files
+_probe_api.py
+*.log
+*.tmp
+
+# VS Code
+.vscode/
