@@ -1,16 +1,28 @@
-# Python
+# Python cache and compiled files
 _pycache_/
 *.py[cod]
+*$py.class
+*.so
+
+# Python environments
 .venv/
 venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables and secrets
 .env
 .env.*
-
-# API keys and secrets
+!.env.example
+.envrc
 secrets.json
 config_private.py
+.streamlit/secrets.toml
+.pypirc
 
-# Trading data and personal records
+# Trading bot private data and state
 backtest_v2_data_cache.json
 paper_state_v2.json
 backtest_trades.csv
@@ -19,10 +31,39 @@ backtest_v2_summary.csv
 backtest_v2_trades.csv
 paper_trades_v2.csv
 
-# Temporary files
+# Temporary and log files
 _probe_api.py
 *.log
 *.tmp
+tempCodeRunnerFile.py
 
-# VS Code
+# Build and distribution
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+wheels/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE settings
 .vscode/
+.idea/
+.spyderproject
+.spyproject
+
+# Python tools
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
