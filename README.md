@@ -71,7 +71,7 @@ Installation
 
 Clone the repository:
 
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/mustafaozcelik-dev/multi-coin-ai-trading-bot.git
 
 Install dependencies:
 
